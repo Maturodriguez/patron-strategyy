@@ -1,0 +1,19 @@
+classDiagram
+    class ProcesadorDePagos {
+      -MetodoPago metodoPago
+      +setMetodoPago(MetodoPago)
+      +procesar(double) ResultadoPago
+    }
+    class MetodoPago {
+      <<interface>>
+      +pagar(double) ResultadoPago
+    }
+    class PagoTarjeta
+    class PagoBilleteraVirtual
+    class PagoTransferencia
+    class ResultadoPago
+    ProcesadorDePagos o--> MetodoPago
+    MetodoPago <|.. PagoTarjeta
+    MetodoPago <|.. PagoBilleteraVirtual
+    MetodoPago <|.. PagoTransferencia
+    ProcesadorDePagos ..> ResultadoPago

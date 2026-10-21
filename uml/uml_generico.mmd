@@ -1,0 +1,19 @@
+classDiagram
+    class Contexto {
+      -Estrategia estrategia
+      +setEstrategia(Estrategia)
+      +ejecutar()
+    }
+    class Estrategia {
+      <<interface>>
+      +ejecutar()
+    }
+    class EstrategiaConcretaA {
+      +ejecutar()
+    }
+    class EstrategiaConcretaB {
+      +ejecutar()
+    }
+    Contexto o--> Estrategia
+    Estrategia <|.. EstrategiaConcretaA
+    Estrategia <|.. EstrategiaConcretaB
